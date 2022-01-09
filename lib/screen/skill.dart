@@ -1,0 +1,11 @@
+///
+/// screen/skill.dart
+///
+import 'package:flutter/material.dart';
+ 
+class SkillScreen extends StatelessWidget {
+  @override
+    Widget build(BuildContext context) {
+      return MaterialApp();
+    }
+}
