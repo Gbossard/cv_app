@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:cv_app/widget/icoLink.dart';
 
-import 'package:cv_app/model/airtable_data.dart';
+import 'package:cv_app/model/airtable_data_profil.dart';
  
 class ProfilScreen extends StatelessWidget {
     @override
@@ -33,7 +33,7 @@ class ProfilScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
+            Container(  
               height: 300,
               child: FutureBuilder(
                 future: airtableData.getProfil(),
