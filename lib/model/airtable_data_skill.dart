@@ -13,9 +13,6 @@ class AirtableDataSkill {
   String createdTime;
   String category;
   String skills;
-  String date;
-  String notes;
-  /* Array logo; */
  
   AirtableDataSkill({
     required this.id,

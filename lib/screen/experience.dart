@@ -40,7 +40,7 @@ class ExperienceScreen extends StatelessWidget {
                                     style: const TextStyle(fontFamily: 'raleway', fontStyle: FontStyle.italic, fontSize: 16),
                                   ),
                                   Text("${value.notes}")
-                                ]5
+                                ]
                               ),
                               contentPadding: EdgeInsets.all(10.0),
                               isThreeLine: true
