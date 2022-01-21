@@ -4,8 +4,8 @@
 import 'package:flutter/material.dart';
 
 var heading = TextStyle(
-  fontFamily: 'Monserrat',
-  fontSize: 25,
+  fontFamily: 'raleway',
+  fontSize: 20,
   color: Colors.grey.shade900,
-  letterSpacing: 2
+  fontWeight: FontWeight.bold
 );

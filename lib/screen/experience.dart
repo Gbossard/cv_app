@@ -3,6 +3,7 @@
 ///
 import 'package:flutter/material.dart';
 
+import 'package:cv_app/theme.dart';
 import 'package:cv_app/model/airtable_data_experience.dart';
  
 class ExperienceScreen extends StatelessWidget {
@@ -27,12 +28,20 @@ class ExperienceScreen extends StatelessWidget {
                       children: values!
                           .map(
                             (AirtableDataExperience value) => ListTile(
+                              // leading: Image.network(value.logo),
                               title: Text(
                                 value.title,
-                                style: 
-                                  FontWeight.bold,
+                                style: heading,
                               ),
-                              subtitle: Text("${value.function}(${value.date}) \n${value.notes}"),
+                              subtitle: Wrap(
+                                children: [ 
+                                  Text(
+                                    "${value.function}(${value.date})", 
+                                    style: const TextStyle(fontFamily: 'raleway', fontStyle: FontStyle.italic, fontSize: 16),
+                                  ),
+                                  Text("${value.notes}")
+                                ]5
+                              ),
                               contentPadding: EdgeInsets.all(10.0),
                               isThreeLine: true
                             ),
