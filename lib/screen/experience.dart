@@ -35,10 +35,14 @@ class ExperienceScreen extends StatelessWidget {
                               ),
                               subtitle: Wrap(
                                 children: [ 
-                                  Text(
-                                    "${value.function}(${value.date})", 
-                                    style: const TextStyle(fontFamily: 'raleway', fontStyle: FontStyle.italic, fontSize: 16),
+                                  Padding(
+                                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                    child: Text(
+                                      "${value.function}(${value.date})", 
+                                      style: const TextStyle(fontFamily: 'raleway', fontStyle: FontStyle.italic, fontSize: 16),
+                                    ),
                                   ),
+                                  
                                   Text("${value.notes}")
                                 ]
                               ),
