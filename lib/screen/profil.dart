@@ -38,7 +38,6 @@ class ProfilScreen extends StatelessWidget {
                 ),
               ),
               Container(  
-                height: 300,
                 child: FutureBuilder(
                   future: airtableData.getProfil(),
                   builder: (BuildContext context,
@@ -46,6 +45,9 @@ class ProfilScreen extends StatelessWidget {
                     if (snapshot.hasData) {
                       List<AirtableDataProfil>? values = snapshot.data;
                       return ListView(
+                        primary: false,
+                        physics: const NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
                         children: values!
                             .map(
                               (AirtableDataProfil value) => ListTile(

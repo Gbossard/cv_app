@@ -12,14 +12,13 @@ class ExperienceScreen extends StatelessWidget {
     Widget build(BuildContext context) {
       final AirtableData airtableData = AirtableData();
       return Scaffold(
-        appBar: appBar("Expérience"),
+        appBar: appBar("Expériences"),
         body: SingleChildScrollView(
          padding: const EdgeInsets.all(10),
          child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children:  <Widget> [   
             Container(
-              height: 800,
               child: FutureBuilder(
                 future: airtableData.getExperience(),
                 builder: (BuildContext context,
@@ -27,6 +26,9 @@ class ExperienceScreen extends StatelessWidget {
                   if (snapshot.hasData) {
                     List<AirtableDataExperience>? values = snapshot.data;
                     return ListView(
+                      primary: false,
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
                       children: values!
                           .map(
                             (AirtableDataExperience value) => ListTile(

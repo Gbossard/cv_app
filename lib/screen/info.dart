@@ -20,7 +20,6 @@ class InfoScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children:  <Widget> [   
               Container(
-                height: 700,
                 child: FutureBuilder(
                   future: airtableData.getInfo(),
                   builder: (BuildContext context,
@@ -28,6 +27,9 @@ class InfoScreen extends StatelessWidget {
                     if (snapshot.hasData) {
                       List<AirtableDataInfo>? values = snapshot.data;
                       return ListView(
+                        primary: false,
+                        physics: const NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
                         children: values!
                             .map(
                                 (AirtableDataInfo value) => ListTile(

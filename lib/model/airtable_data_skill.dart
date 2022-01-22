@@ -51,8 +51,10 @@ class AirtableData {
               id: value['id'],
               createdTime: value['createdTime'],
               category: value['fields']['category'],
-              skills: value['fields']['skills']
-            ),
+              skills: value['fields']['skills'][2]
+                ['url']
+            )
+            
           )
         },
       );

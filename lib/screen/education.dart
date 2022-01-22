@@ -20,7 +20,6 @@ class EducationScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children:  <Widget> [   
             Container(
-              height: 800,
               child: FutureBuilder(
                 future: airtableData.getEducation(),
                 builder: (BuildContext context,
@@ -28,6 +27,9 @@ class EducationScreen extends StatelessWidget {
                   if (snapshot.hasData) {
                     List<AirtableDataEducation>? values = snapshot.data;
                     return ListView(
+                      primary: false,
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
                       children: values!
                           .map(
                             (AirtableDataEducation value) => ListTile(

@@ -16,53 +16,76 @@ class SkillScreen extends StatelessWidget {
         appBar: appBar("Compétences"),
         body: SingleChildScrollView(
          padding: const EdgeInsets.all(10),
-        //  child: Column(
-        //   crossAxisAlignment: CrossAxisAlignment.start,
-        //   children:  <Widget> [   
-        //     Container(
-        //       height: 800,
-        //       child: FutureBuilder(
-        //         future: airtableData.getSkill(),
-        //         builder: (BuildContext context,
-        //             AsyncSnapshot<List<AirtableDataSkill>> snapshot) {
-        //           if (snapshot.hasData) {
-        //             List<AirtableDataSkill>? values = snapshot.data;
-        //             return ListView(
-        //               children: values!
-        //                   .map(
-        //                     (AirtableDataSkill value) => ListTile(
-        //                       leading: Image.network(value.logo, width: 100),
-        //                       title: Text(
-        //                         value.title,
-        //                         style: heading,
-        //                       ),
-        //                       subtitle: Wrap(
-        //                         children: [ 
-        //                           Padding(
-        //                             padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-        //                             child: Text(
-        //                               value.function + " " + value.date, 
-        //                               style: const TextStyle(fontFamily: 'raleway', fontStyle: FontStyle.italic, fontSize: 14),
-        //                             ),
-        //                           ),
+         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children:  <Widget> [   
+            Container(
+              child: FutureBuilder(
+                future: airtableData.getSkill(),
+                builder: (BuildContext context,
+                    AsyncSnapshot<List<AirtableDataSkill>> snapshot) {
+                  if (snapshot.hasData) {
+                    List<AirtableDataSkill>? values = snapshot.data;
+                    return ListView(
+                      primary: false,
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      children: values!
+                          .map(
+                            (AirtableDataSkill value) => ListTile(
+                              title: 
+                                Padding(
+                                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                  child: Text(value.category),
+                              ),
+                              subtitle: Wrap(
+                                children: [ 
+                                  Padding(
+                                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                    child: Container(
+                                      width: 80,
+                                      height: 80,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: const BorderRadius.only(
+                                          topLeft: Radius.circular(10),
+                                          topRight: Radius.circular(10),
+                                          bottomLeft: Radius.circular(10),
+                                          bottomRight: Radius.circular(10)
+                                        ),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey.withOpacity(0.5),
+                                            spreadRadius: 5,
+                                            blurRadius: 7,
+                                            offset: Offset(0, 3), // changes position of shadow
+                                          ),
+                                        ],
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(10.0),
+                                        child: Image.network(value.skills),
+                                      )
+                                    )
+                                      
+      
+                                  ),
                                   
-        //                           Text(value.notes)
-        //                         ]
-        //                       ),
-        //                       contentPadding: EdgeInsets.all(10.0),
-        //                       isThreeLine: true
-        //                     ),
-        //                   )
-        //                   .toList(),
-        //             );
-        //           } else {
-        //             return Center(child: CircularProgressIndicator());
-        //           }
-        //         },
-        //       ),
-        //     ), 
-        //   ],
-        // ),
+                                ]
+                              ),
+                              contentPadding: EdgeInsets.all(10.0),
+                            ),
+                          )
+                          .toList(),
+                    );
+                  } else {
+                    return Center(child: CircularProgressIndicator());
+                  }
+                },
+              ),
+            ), 
+          ],
+        ),
         ),
       );
     }
