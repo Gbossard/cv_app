@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
     /// avec infos titre, theme, splash, icones...
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'XXXXX',
+      title: 'Gaëlle Bossard CV',
 
       theme: ThemeData(
         fontFamily: 'Raleway',
