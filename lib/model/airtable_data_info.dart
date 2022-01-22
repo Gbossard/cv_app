@@ -54,7 +54,7 @@ class AirtableData {
               createdTime: value['createdTime'],
               title: value['fields']['title'],
               text: value['fields']['text'],
-              image: value['fields']['image']
+              image: value['fields']['image'][0]['url']
             ),
           )
         },
