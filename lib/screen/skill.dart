@@ -39,9 +39,10 @@ class SkillScreen extends StatelessWidget {
                                   child: Text(value.category),
                               ),
                               subtitle: Wrap(
-                                children: [ 
+                                children: <Widget> [ 
+                                  for (var skillImage in value.skills)
                                   Padding(
-                                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                    padding: const EdgeInsets.fromLTRB(0, 0, 10, 10),
                                     child: Container(
                                       width: 80,
                                       height: 80,
@@ -64,7 +65,7 @@ class SkillScreen extends StatelessWidget {
                                       ),
                                       child: Padding(
                                         padding: const EdgeInsets.all(10.0),
-                                        child: Image.network(value.skills),
+                                        child: Image.network(skillImage),
                                       )
                                     )
                                       

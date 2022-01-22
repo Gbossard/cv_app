@@ -12,7 +12,7 @@ class AirtableDataSkill {
   String id;
   String createdTime;
   String category;
-  String skills;
+  List<String> skills;
  
   AirtableDataSkill({
     required this.id,
@@ -45,17 +45,18 @@ class AirtableData {
  
       List<AirtableDataSkill> values = [];
       data.forEach(
-        (value) => {
-          values.add(
+        (value) {
+          dynamic skills = value['fields']['skills'];
+          List<String> skillList = [];
+          skills.forEach((skill) => skillList.add(skill['url']));
+          return values.add(
             AirtableDataSkill(
               id: value['id'],
               createdTime: value['createdTime'],
               category: value['fields']['category'],
-              skills: value['fields']['skills'][2]
-                ['url']
-            )
-            
-          )
+              skills: skillList,
+            ),
+          );
         },
       );
       return values;
