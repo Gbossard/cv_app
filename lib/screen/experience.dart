@@ -4,15 +4,17 @@
 import 'package:flutter/material.dart';
 
 import 'package:cv_app/theme.dart';
+import 'package:cv_app/widget/appBar.dart';
 import 'package:cv_app/model/airtable_data_experience.dart';
  
 class ExperienceScreen extends StatelessWidget {
   @override
     Widget build(BuildContext context) {
       final AirtableData airtableData = AirtableData();
-      return SingleChildScrollView(
+      return Scaffold(
+        appBar: appBar("Expérience"),
+        body: SingleChildScrollView(
          padding: const EdgeInsets.all(10),
-
          child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children:  <Widget> [   
@@ -28,7 +30,7 @@ class ExperienceScreen extends StatelessWidget {
                       children: values!
                           .map(
                             (AirtableDataExperience value) => ListTile(
-                              // leading: Image.network(value.logo),
+                              leading: Image.network(value.logo, width: 100),
                               title: Text(
                                 value.title,
                                 style: heading,
@@ -38,12 +40,12 @@ class ExperienceScreen extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
                                     child: Text(
-                                      "${value.function}(${value.date})", 
-                                      style: const TextStyle(fontFamily: 'raleway', fontStyle: FontStyle.italic, fontSize: 16),
+                                      value.function + " " + value.date, 
+                                      style: const TextStyle(fontFamily: 'raleway', fontStyle: FontStyle.italic, fontSize: 14),
                                     ),
                                   ),
                                   
-                                  Text("${value.notes}")
+                                  Text(value.notes)
                                 ]
                               ),
                               contentPadding: EdgeInsets.all(10.0),
@@ -59,6 +61,7 @@ class ExperienceScreen extends StatelessWidget {
               ),
             ), 
           ],
+        ),
         ),
       );
     }

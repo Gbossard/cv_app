@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         fontFamily: 'Raleway',
         primarySwatch: Colors.teal,
-        scaffoldBackgroundColor: Colors.grey[50]
+        scaffoldBackgroundColor: Colors.white
       ),
  
       ///

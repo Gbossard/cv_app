@@ -1,5 +1,5 @@
 ///
-/// model/airtable_data.dart
+/// model/airtable_data_experience.dart
 ///
 
 import 'dart:ffi';
@@ -15,7 +15,7 @@ class AirtableDataExperience {
   String function;
   String date;
   String notes;
-  /* Array logo; */
+  String logo;
  
   AirtableDataExperience({
     required this.id,
@@ -24,7 +24,7 @@ class AirtableDataExperience {
     required this.function,
     required this.date,
     required this.notes,
-    /* required this.logo, */
+    required this.logo,
   });
 }
  
@@ -60,7 +60,7 @@ class AirtableData {
               function: value['fields']['function'],
               date: value['fields']['date'],
               notes: value['fields']['notes'],
-              /* logo: value['fields']['logo'], */
+              logo: value['fields']['logo'][0]['url'],
             ),
           )
         },

@@ -1,5 +1,5 @@
 ///
-/// model/airtable_data.dart
+/// model/airtable_data_skill.dart
 ///
 
 import 'dart:ffi';

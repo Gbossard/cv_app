@@ -33,10 +33,6 @@ class _DeviceScreenState extends State<DeviceScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Gaëlle Bossard"),
-      ),
-      //
       body: _screenList[_currentScreen],
       //
       bottomNavigationBar: BottomNavigationBar(
@@ -60,7 +56,7 @@ class _DeviceScreenState extends State<DeviceScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.list),
-            label: 'Formation',
+            label: 'Formations',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
