@@ -30,7 +30,7 @@ class ExperienceScreen extends StatelessWidget {
                       children: values!
                           .map(
                             (AirtableDataExperience value) => ListTile(
-                              leading: Image.network(value.logo, width: 100),
+                              leading: Image.network(value.logo, width: 60),
                               title: Text(
                                 value.title,
                                 style: heading,

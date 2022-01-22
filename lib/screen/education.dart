@@ -16,53 +16,45 @@ class EducationScreen extends StatelessWidget {
         appBar: appBar("Formations"),
         body: SingleChildScrollView(
          padding: const EdgeInsets.all(10),
-        //  child: Column(
-        //   crossAxisAlignment: CrossAxisAlignment.start,
-        //   children:  <Widget> [   
-        //     Container(
-        //       height: 800,
-        //       child: FutureBuilder(
-        //         future: airtableData.getEducation(),
-        //         builder: (BuildContext context,
-        //             AsyncSnapshot<List<AirtableDataEducation>> snapshot) {
-        //           if (snapshot.hasData) {
-        //             List<AirtableDataEducation>? values = snapshot.data;
-        //             return ListView(
-        //               children: values!
-        //                   .map(
-        //                     (AirtableDataEducation value) => ListTile(
-        //                       leading: Image.network(value.logo, width: 100),
-        //                       title: Text(
-        //                         value.title,
-        //                         style: heading,
-        //                       ),
-        //                       subtitle: Wrap(
-        //                         children: [ 
-        //                           Padding(
-        //                             padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-        //                             child: Text(
-        //                               value.function + " " + value.date, 
-        //                               style: const TextStyle(fontFamily: 'raleway', fontStyle: FontStyle.italic, fontSize: 14),
-        //                             ),
-        //                           ),
-                                  
-        //                           Text(value.notes)
-        //                         ]
-        //                       ),
-        //                       contentPadding: EdgeInsets.all(10.0),
-        //                       isThreeLine: true
-        //                     ),
-        //                   )
-        //                   .toList(),
-        //             );
-        //           } else {
-        //             return Center(child: CircularProgressIndicator());
-        //           }
-        //         },
-        //       ),
-        //     ), 
-        //   ],
-        // ),
+         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children:  <Widget> [   
+            Container(
+              height: 800,
+              child: FutureBuilder(
+                future: airtableData.getEducation(),
+                builder: (BuildContext context,
+                    AsyncSnapshot<List<AirtableDataEducation>> snapshot) {
+                  if (snapshot.hasData) {
+                    List<AirtableDataEducation>? values = snapshot.data;
+                    return ListView(
+                      children: values!
+                          .map(
+                            (AirtableDataEducation value) => ListTile(
+                              leading: Image.network(value.image, width: 60),
+                              title: Text(
+                                value.title,
+                                style: heading,
+                              ),
+                              subtitle: Wrap(
+                                children: [   
+                                  Text(value.details)
+                                ]
+                              ),
+                              contentPadding: EdgeInsets.all(10.0),
+                              isThreeLine: true
+                            ),
+                          )
+                          .toList(),
+                    );
+                  } else {
+                    return Center(child: CircularProgressIndicator());
+                  }
+                },
+              ),
+            ), 
+          ],
+        ),
         ),
       );
     }

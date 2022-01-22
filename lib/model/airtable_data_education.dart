@@ -52,7 +52,7 @@ class AirtableData {
             AirtableDataEducation(
               id: value['id'],
               createdTime: value['createdTime'],
-              image: value['fields']['image'],
+              image: value['fields']['image'][0]['url'],
               title: value['fields']['title'],
               details: value['fields']['details']
             ),

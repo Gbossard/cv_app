@@ -47,23 +47,23 @@ class _DeviceScreenState extends State<DeviceScreen> {
         //
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.person),
             label: 'Profil',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.accessible),
+            icon: Icon(Icons.work),
             label: 'Expériences',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.list),
+            icon: Icon(Icons.school),
             label: 'Formations',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
+            icon: Icon(Icons.engineering),
             label: 'Compétences',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
+            icon: Icon(Icons.info),
             label: 'Infos',
           )
         ],
